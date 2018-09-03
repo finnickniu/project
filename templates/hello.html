@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/html">
+<body>
+<center>
+    Upload your traffic data files
+<form id="form1" method="post" action="/api/upload" enctype="multipart/form-data">
+    <div>
+        <input id="File1" type="file" name="file"/>
+        <input type="submit">upload</input>
+    </div>
+</form>
+</center>
+
+<center><h1>Scripping Man UTD Matches</h1></center>
+<form name='form1'method="post" action="/success">
+
+<center><h2>Input Year: <input type="text" name="date">
+    <input type="submit" name="Submit" value="Search"></h2></center>
+</form>
+
+<center><h1>Find Outliers of Traffic Dataset(Arima)</h1></center>
+<form name='form2' method="post" action="/Arima">
+
+<center><h2>Input dateformat xxxx-xx-xx): <input type="text" name="result">
+    <input type="submit" name="Submit" value="Search"></h2></center>
+</form>
+<center><h3>The detected result by Arima is {{result}}</h3></center>
+
+<center><h1>Find Outliers of Traffic Dataset(Lstm)</h1></center>
+
+<form name='form3' method="post" action="/lstm">
+<center><h2>
+    <br>Input date1(format xxxx-xx-xx): <input type="text" name="date1">
+    <br>Input date2(format xxxx-xx-xx): <input type="text" name="date2">
+    <br>Input date3(format xxxx-xx-xx): <input type="text" name="date3">
+    <br>Input epochs: <input type="text" name="epochs">
+    <br><input type="submit" name="Submit" value="Search"></h2></center>
+</form>
+<center><h3>The detected result by Lstm is {{result1}}</h3></center>
+</body>
+</html>

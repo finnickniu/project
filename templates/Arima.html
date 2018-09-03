@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<center>
+<center><h1>Find Outliers of Traffic Dataset(Arima)</h1></center>
+
+<center>
+    <form id="form4" method="post" action="/concat1">
+<div>
+    <button type="submit" style="width:100px;height:60px">Concat data set </button>
+</div>
+</form>
+
+    </center>
+    <br/>
+    <center>View folders in data lake</center>
+    <center>   <a href="file:///Users/ushisensei/datalake/trafficdata">data lake</a></center>
+</center>
+  <hr/>
+
+
+
+<center>
+<form name='form2' method="post" action="/Arima">
+    <div>
+test     <button type="submit" style="width:100px;height:60px">run </button>
+    </div>
+</form>
+</center>
+<center>
+<hr />
+<center><h2>Run Arima with single hour</h2></center>
+
+<form name='form4' method="post" action="/Arima2">
+<h2>Input a date to detect: <input type="text" name="date"></h2>
+    <h2>Input a hour to detect: <input type="text" name="hour"></h2>
+<br/>
+    <input type="submit" name="Submit" value="Run" style="width:60px;height:60px">
+</form>
+
+</center>
+<hr />
+<center><h2>Results</h2></center>
+<center><h3><center>View result in data lake</center>
+    <a href="file:///Users/ushisensei/datalake">data lake</a></h3></center>
+
+<center><h3>{{result1}}</h3></center>
+<center><h3>The number of outliers by ftm is {{r1}}</h3></center>
+<center><h3>The total number of outliers by ftm is {{c1}}</h3></center>
+<center><h3>The Recall is {{result}}</h3></center>
+<center><h3>The average mse is {{avgmse}}</h3></center>
+<center>
+ <div>
+      <!--<img style='display:block; width:100px;height:100px;' id='base64image'  src="data:;base64,{{ img_stream }}">-->
+              <p><img src="{{ url_for('static', filename='normaldet.png')}}" width="500" height="500" />
+        <center>Detection</center> </p>
+         <p><img src="{{ url_for('static', filename='2015-12-06 fitting.png')}}" width="500" height="500" />
+        <center>Fiiting</center> </p>
+       <p> <img src="{{ url_for('static', filename='2015-12-05 15:00:00 detection.png')}}" width="500" height="500"/>
+         <center>Detection</center></p>
+        <p><img src="{{ url_for('static', filename='2015-12-05 15:00:00 fitting.png')}}" width="500" height="500" />
+        <center>Fitting</center></p>
+         <p><img src="{{ url_for('static', filename='2017-12-26 15:00:00 detection.png')}}" width="500" height="500" />
+        <center>Detection</center> </p>
+         <p><img src="{{ url_for('static', filename='2017-12-26 15:00:00 fitting.png')}}" width="500" height="500" />
+        <center>Fiiting</center> </p>
+
+
+    </div>
+</center>
+<form id="form3" method="post" action="/">
+<div>
+    <button type="submit">back </button>
+</div>
+</form>
+</body>
+</html>

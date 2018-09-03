@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+
+<center><h1>Find Outliers of Traffic Dataset(Lstm)</h1></center>
+
+
+
+    <form id="form1" method="post" action="/concat2">
+<div>
+    <center><button type="submit" style="width:100px;height:60px">Concat data set </button></center>
+</div>
+</form>
+
+
+    <br/>
+    <center>View folders in data lake</center>
+    <center><a href="file:///Users/ushisensei/datalake/trafficdata">data lake</a></center>
+
+  <hr/>
+
+
+    <center><h2>Run Lstm with all test data sets</h2></center>
+
+       <form name='form2' method="post" action="/lstm1">
+           <center>
+        <h2>Input the number of neurons: <input type="text" name="neurons"></h2>
+       <h2>Input the number of batch_size: <input type="text" name="batch"></h2>
+      <h2>Input the number of  epochs: <input type="text" name="epochs"></h2>
+     <h2>Input the number of  learning rate: <input type="text" name="learningrate"></h2>
+           </center>
+<br/>
+        <center><input type="submit" name="Submit" value="Run" style="width:60px;height:60px"></center>
+</form>
+
+
+
+
+ <hr/>
+<center><h2>Results</h2></center>
+<center><h3>The outlier by ftm happened at {{date3}}</h3></center>
+
+<center><h3>The number of outliers by ftm  is {{result}}</h3></center>
+<center><h3>The total number of outliers by ftm  is {{count}}</h3></center>
+<center><h3>The recall is {{accuracy}}</h3></center>
+<!--<center><h3>The total mean squared error is {{rmse}}</h3></center>-->
+
+
+
+ <hr/>
+<center><h3>The result figure with below hyper-parameters </h3></center>
+               <center><h4> neurons = 1</h4></center>
+                <center><h4>  batch_size = 1</h4></center>
+                 <center><h4> repeats = 1</h4></center>
+                 <center><h4> epochs = 80  </h4></center>
+                 <center><h4> learningrate=0.00003</h4></center>
+
+               <center><p><img src="{{ url_for('static', filename='Lstmfiiting.png')}}" width="500" height="500" />
+        <center>Fitting</center> </p></center>
+
+               <center> <p><img src="{{ url_for('static', filename='Lstmdetecting.png')}}" width="500" height="500" />
+
+                <center>Detection</center> </p></center>
+<center> <p><img src="{{ url_for('static', filename='epochs_diagnostic.png')}}" width="500" height="500" />
+
+                <center>Loss Trend</center> </p></center>
+<center>
+<form id="form3" method="post" action="/">
+<div>
+    <button type="submit">back </button>
+</div>
+</form>
+    </center>
+</body>
+</html>

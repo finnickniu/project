@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K-Means model</title>
+</head>
+<body>
+<center>
+<center><h1>Find Outliers by K-means</h1></center>
+    <center>
+
+    <form id="form3" method="post" action="/concat">
+<div>
+    <button type="submit" style="width:100px;height:60px">Concat data set </button>
+</div>
+</form>
+
+    </center>
+    <br/>
+    <center>View folders in data lake</center>
+    <center>   <a href="file:///Users/ushisensei/datalake">data lake</a></center>
+  <hr/>
+<br />
+    <br />
+
+  <center><h2/>Run K-means</h2></center>
+
+<form id="form1" method="post" action="/Kmeans1" >
+    <div>
+    <button type="submit" style="width:100px;height:60px">run </button>
+    </div>
+
+</form>
+
+</center>
+
+<br />
+<hr/>
+<center><h2>Results</h2></center>
+<!--<center><h3>The number of  normal points is {{ normal}}</h3></center>-->
+<!--<center><h3>The number of total test set is {{totalnor}}</h3></center>-->
+<center><h3>The number of outliers by ftm (football matches) is {{out}}</h3></center>
+<center><h3>The toatal number of outliers by ftm is {{totalout}}</h3></center>
+<center><h3>The Recall is {{result}}</h3></center>
+<center>
+
+<!--<center><h1>Choose one visualized reuslt</h1></center>-->
+<!--<form id="form2" method="post" action="/Kmeans2" >-->
+  <!--<center><h2>-->
+    <!--<br>Select a weekday: <input type="text" name="weekday">-->
+    <!--<br>Select a hour: <input type="text" name="time">-->
+    <!--<br><input type="submit" name="Submit" value="Search"></h2></center>-->
+
+    <div>
+      <!--<img style='display:block; width:100px;height:100px;' id='base64image'  src="data:;base64,{{ img_stream }}">-->
+       <p> <img src="{{ url_for('static', filename='615hour.png')}}" width="500" height="500" alt='Saturday 3pm'/>
+         <center>Saturday 3pm</center></p>
+        <p><img src="{{ url_for('static', filename='219hour.png')}}" width="500" height="500" />
+        <center>Tuesday 19pm</center></p>
+         <p><img src="{{ url_for('static', filename='319hour.png')}}" width="500" height="500" />
+        <center>Wednesday 7pm</center> </p>
+         <p><img src="{{ url_for('static', filename='619hour.png')}}" width="500" height="500" />
+        <center>Saturday 7pm</center> </p>
+
+
+    </div>
+
+
+</center>
+<form id="form2" method="post1" action="/">
+<div>
+    <button type="submit">back </button>
+</div>
+</form>
+</center>
+</body>
+</html>
